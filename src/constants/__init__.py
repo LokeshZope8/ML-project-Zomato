@@ -5,12 +5,12 @@ from datetime import datetime
 # data transformation, model training is stored
 #artifact folder-->pipeline folder-->output with timestamp
 def get_current_time_stamp():#to get current timestamp
-    return f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}"
+    return f"{datetime.now().strftime('%Y-%m-%d %H-%M-%S')}"
 
 CURRENT_TIME_STAMP = get_current_time_stamp()
 
 #defining dataset
-ROUTE_DIR_KEY = os.getcwd()     #getcwd is used to find current working directory
+ROOT_DIR_KEY = os.getcwd()     #getcwd is used to find current working directory
 DATA_DIR= "dataset"
 DATA_DIR_KEY= "finalTrain.csv"
 
@@ -18,7 +18,7 @@ DATA_DIR_KEY= "finalTrain.csv"
 ARTIFACT_DIR_KEY = "Artifact"
 
 #Difining data ingestion related variable: 
-DATA_INGESTION_KEY = "data ingestion"    #CREATED THIS FOLDER IN ARTIFACT
+DATA_INGESTION_KEY = "data_ingestion"    #CREATED THIS FOLDER IN ARTIFACT
 #creating two folders named DATA_INGESTION_RAW_DATA and DATA_INGESTION_INGESTED_DATA_DIR_KEY 
 # in artifact folder
 
@@ -33,3 +33,13 @@ RAW_DATA_DIR_KEY = "raw.csv"
 
 TRAIN_DATA_DIR_KEY = "train.csv"
 TEST_DATA_DIR_KEY = "test.csv"
+
+
+#Defining Data Transformation Variables:
+#artifact folder --> create transformation folder --> processor(Saving .pkl file) & transformation(saving train &test.csv file)
+DATA_TRANSFORMATION_ARTIFACT = "data_transformation"
+DATA_PREPROCESSED_DIR = "processor"
+DATA_TRANSFORMATION_PROCESSING_OBJECT ="processor.pkl"
+DATA_TRANSFORM_DIR = "transformation"
+TRANSFORM_TRAIN_DIR_KEY = "train.csv"
+TRANSFORM_TEST_DIR_KEY = "test.csv"

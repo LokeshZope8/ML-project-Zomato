@@ -1,3 +1,10 @@
 1. constant file--> first variable defining in this folder
 configuration file --> then connect all files in this folder
 data ingestion --> then pipeline design start from this folder
+
+
+Data Transformation --> 
+constant file--> defining variable
+configuration file--> connecting all files
+data transformation--> perform feature engg ->if requred create helper function in utils function->
+->data transformation->complete helper function->run pipeline in data ingestion
