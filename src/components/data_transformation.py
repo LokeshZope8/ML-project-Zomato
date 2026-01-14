@@ -31,10 +31,11 @@ class Feature_Engineering(BaseEstimator, TransformerMixin):
     def transform_data(self, df):#removing unnecessary columns from original dataset
         try:
             df.drop(['ID'], axis=1, inplace= True, errors='ignore')
-            self.distance_numpy(df, 'Restaurant_latitude', 
-                                'Restaurant_longitude',
-                                'Delivery_location_latitude',
-                                'Delivery_location_longitude')
+            if 'Delivery_location_latitude' in df.columns:
+                self.distance_numpy(df, 'Restaurant_latitude', 
+                                    'Restaurant_longitude',
+                                    'Delivery_location_latitude',
+                                    'Delivery_location_longitude')
             df.drop(['Delivery_person_ID','Restaurant_latitude', 
                                 'Restaurant_longitude',
                                 'Delivery_location_latitude',
@@ -148,7 +149,7 @@ class DataTransformation:
             df_test.to_csv(self.data_transformation_config.transform_test_path, index=False, header=True)#savaing test csv file in folder
             
             save_obj(file_path = self.data_transformation_config.processed_obj_file_path,
-                    obj=fe_obj)
+                    obj=processing_obj)
             save_obj(file_path = self.data_transformation_config.feature_engg_obj_path,
                     obj=fe_obj)
             return (train_arr,

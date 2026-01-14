@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Delivery Time Prediction</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Zomato AI</h1>
+            <p class="subtitle">Advanced Machine Learning for Delivery Time Estimation</p>
+        </header>
+
+        <div class="features-grid">
+            <a href="/predict" class="card">
+                <div class="card-icon"><i class="fas fa-motorcycle"></i></div>
+                <h2>Single Prediction</h2>
+                <p>Predict delivery time for a single order based on real-time factors like weather, traffic, and distance.</p>
+            </a>
+
+            <a href="/batch" class="card">
+                <div class="card-icon"><i class="fas fa-file-csv"></i></div>
+                <h2>Batch Prediction</h2>
+                <p>Upload a clean dataset (CSV) to generate predictions for thousands of orders at once.</p>
+            </a>
+
+            <a href="/train" class="card">
+                <div class="card-icon"><i class="fas fa-brain"></i></div>
+                <h2>Train Model</h2>
+                <p>Retrain the underlying machine learning model with new data to improve accuracy.</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
