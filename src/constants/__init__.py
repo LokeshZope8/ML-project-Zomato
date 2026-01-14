@@ -43,3 +43,8 @@ DATA_TRANSFORMATION_PROCESSING_OBJECT ="processor.pkl"
 DATA_TRANSFORM_DIR = "transformation"
 TRANSFORM_TRAIN_DIR_KEY = "train.csv"
 TRANSFORM_TEST_DIR_KEY = "test.csv"
+
+
+#Model Training Starts from here
+MODEL_TRAINER_KEY = "model_trainer"
+MODEL_OBJECT = "model.pkl"
